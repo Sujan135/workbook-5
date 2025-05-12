@@ -6,6 +6,13 @@ public class Vehicle {
     private int cargoCapacity;
     private int fuelCapacity;
 
+    public Vehicle(String color, int numberOfPassengers, int cargoCapacity, int fuelCapacity) {
+        this.color = color;
+        this.numberOfPassengers = numberOfPassengers;
+        this.cargoCapacity = cargoCapacity;
+        this.fuelCapacity = fuelCapacity;
+    }
+
     public String getColor() {
         return color;
     }
@@ -36,5 +43,12 @@ public class Vehicle {
 
     public void setFuelCapacity(int fuelCapacity) {
         this.fuelCapacity = fuelCapacity;
+    }
+
+    public void displayInfo(){
+        System.out.println("Color: " + color);
+        System.out.println("Passengers: " + numberOfPassengers);
+        System.out.println("Cargo Capacity: " + cargoCapacity + "lbs");
+        System.out.println("Fuel capacity: " + fuelCapacity + "liters");
     }
 }
