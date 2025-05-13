@@ -50,7 +50,6 @@ public class House extends Asset{
 
     @Override
     public double getValue() {
-        super.getValue();
         double rate;
         System.out.println("\nHouse value is determined as: ");
         switch (condition) {
