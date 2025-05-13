@@ -27,7 +27,7 @@ public class Main {
             System.out.println("\nDescription: " + asset.getDescription());
             System.out.println("Date:" + asset.getDateAcquired());
             System.out.println("Original cost: $" + asset.getOriginalCost());
-            System.out.println("Current value: $" + asset.getValue());
+            System.out.printf("Current value: $%.2f\n" , asset.getValue());
             System.out.println(message);
 
         }

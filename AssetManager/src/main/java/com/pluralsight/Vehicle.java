@@ -1,5 +1,6 @@
 package com.pluralsight;
 
+import java.time.LocalDate;
 import java.time.Year;
 
 public class Vehicle extends Asset{
@@ -28,23 +29,25 @@ public class Vehicle extends Asset{
 
     @Override
     public double getValue() {
+//        int currentYear = LocalDate.now().getYear();
         int currentYear = Year.now().getValue();
         int age = currentYear - year;
         double value;
 
-        System.out.println("Car value is determined as: ");
+//        System.out.println("Car value is determined as: ");
 
         if (age <= 0) {
             value = getOriginalCost();
         }else  if (age <= 3) {
             value = getOriginalCost() * Math.pow(0.97, age);
         } else  if (age <= 6) {
-            value = getOriginalCost() * Math.pow(0.97, 3 ) * Math.pow(0.94, age - 3);
+            value = getOriginalCost() * Math.pow(0.94, age);
         }else if (age <= 10) {
-            value =getOriginalCost() * Math.pow(0.97, 3) * Math.pow(0.94, 3) * Math.pow(0.92, age -6);
+            value =getOriginalCost() * Math.pow(0.92, age);
         }else {
-            value = 1000.00;
+            value = 1000.0;
         }
+
 
         if (odometer > 100000 &&
                 !makeModel.toLowerCase().contains("honda") &&
